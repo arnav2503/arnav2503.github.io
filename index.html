@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Task Management Board</title>
+    <link href="styles/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <h1>Task Management Board</h1>
+    <button id="add-task-btn">Add Task</button>
+
+    <div class="grid-container">
+      <div>
+        <h2>To Do</h2>
+        <ul
+          id="todo-list"
+          class="list"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        ></ul>
+      </div>
+      <div>
+        <h2>In Progress</h2>
+        <ul
+          id="in-progress-list"
+          class="list"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        ></ul>
+      </div>
+      <div>
+        <h2>Completed</h2>
+        <ul
+          id="completed-list"
+          class="list"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        ></ul>
+      </div>
+    </div>
+
+    <!-- Define the popup dialog for adding/editing tasks -->
+    <div id="task-popup" class="popup">
+      <div class="popup-content">
+        <h3 id="popup-title">Add Task</h3>
+        <input type="hidden" id="popup-task-id" />
+        <label for="popup-title-input">Title:</label>
+        <input type="text" id="popup-title-input" />
+        <label for="popup-description-input">Description:</label>
+        <textarea id="popup-description-input"></textarea>
+        <label for="popup-status-input">Status:</label>
+        <select id="popup-status-input">
+          <option value="todo">To Do</option>
+          <option value="in-progress">In Progress</option>
+          <option value="completed">Completed</option>
+        </select>
+        <button type="submit" id="popup-submit-btn">Save</button>
+        <button type="button" id="popup-cancel-btn">Cancel</button>
+      </div>
+    </div>
+
+    <script src="scripts/main.js"></script>
+  </body>
+</html>
